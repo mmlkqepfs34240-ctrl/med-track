@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 210 30% 95%;
+
+    --card: 0 0% 6%;
+    --card-foreground: 210 30% 95%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 210 30% 95%;
+
+    --primary: 200 95% 60%;
+    --primary-foreground: 0 0% 0%;
+    --primary-glow: 200 95% 65%;
+
+    --accent: 174 72% 50%;
+    --accent-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 210 30% 95%;
+
+    --muted: 0 0% 10%;
+    --muted-foreground: 215 16% 65%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --warning: 38 95% 52%;
+    --warning-foreground: 0 0% 0%;
+
+    --success: 152 65% 45%;
+    --success-foreground: 0 0% 0%;
+
+    --border: 0 0% 16%;
+    --input: 0 0% 16%;
+    --ring: 200 95% 60%;
+
+    --radius: 0.75rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(210 90% 42%), hsl(200 95% 60%));
+    --gradient-accent: linear-gradient(135deg, hsl(174 72% 42%), hsl(190 80% 50%));
+    --gradient-danger: linear-gradient(135deg, hsl(0 75% 55%), hsl(15 90% 60%));
+    --gradient-success: linear-gradient(135deg, hsl(152 65% 40%), hsl(170 70% 45%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 90% 42%) 0%, hsl(174 72% 42%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(210 40% 98%), hsl(210 30% 94%));
+
+    --shadow-sm: 0 1px 2px hsl(215 30% 12% / 0.04);
+    --shadow-md: 0 4px 12px hsl(210 90% 42% / 0.08);
+    --shadow-lg: 0 10px 30px -10px hsl(210 90% 42% / 0.25);
+    --shadow-glow: 0 0 40px hsl(200 95% 60% / 0.3);
+
+    --sidebar-background: 215 35% 14%;
+    --sidebar-foreground: 210 30% 90%;
+    --sidebar-primary: 200 95% 60%;
+    --sidebar-primary-foreground: 215 35% 14%;
+    --sidebar-accent: 215 30% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 215 30% 22%;
+    --sidebar-ring: 200 95% 60%;
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 215 35% 8%;
+    --foreground: 210 30% 95%;
+    --card: 215 35% 11%;
+    --card-foreground: 210 30% 95%;
+    --popover: 215 35% 11%;
+    --popover-foreground: 210 30% 95%;
+    --primary: 200 95% 60%;
+    --primary-foreground: 215 35% 8%;
+    --secondary: 215 30% 18%;
+    --secondary-foreground: 210 30% 95%;
+    --muted: 215 30% 16%;
+    --muted-foreground: 215 16% 65%;
+    --accent: 174 72% 50%;
+    --accent-foreground: 215 35% 8%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 215 30% 22%;
+    --input: 215 30% 22%;
+    --ring: 200 95% 60%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', 'Cairo', system-ui, sans-serif;
+  }
+  html[dir="rtl"] body {
+    font-family: 'Cairo', 'Inter', system-ui, sans-serif;
+  }
+  h1, h2, h3, h4 { @apply tracking-tight; }
+}
+
+@layer utilities {
+  .gradient-primary { background-image: var(--gradient-primary); }
+  .gradient-accent { background-image: var(--gradient-accent); }
+  .gradient-hero { background-image: var(--gradient-hero); }
+  .gradient-danger { background-image: var(--gradient-danger); }
+  .gradient-success { background-image: var(--gradient-success); }
+  .text-gradient {
+    background-image: var(--gradient-hero);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .shadow-elegant { box-shadow: var(--shadow-lg); }
+  .transition-smooth { transition: var(--transition-smooth); }
+}
+
+html[dir="rtl"] .rtl-flip { transform: scaleX(-1); }
+/* Remove Loveable badge */
+iframe {
+  display: none !important;
+}
+
+a[href*="loveable"] {
+  display: none !important;
+}
+
+div[class*="loveable"] {
+  display: none !important;
+}
